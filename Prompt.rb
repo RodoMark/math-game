@@ -1,18 +1,27 @@
 class Prompt
-  attr_accessor :correct_answer
+  attr_accessor
 
   def initialize(name)
     @name = name
   end
 
   def question
-    @x = rand(1..20)
-    @y = rand(1..20)
+    x = rand(1..20)
+    y = rand(1..20)
 
-    self.correct_answer = x + y
+    correct_answer = x + y
 
-    puts "#{name}: What does #{x} + #{y} equal?"
-  end
+    puts "#{@name}: What does #{x} + #{y} equal?"
+
+    player_answer = gets.chomp.to_i
+      if player_answer == correct_answer
+        return true
+      else
+        return false
+      end
+    end
+
+  
 
   @correct_answer = 0
   

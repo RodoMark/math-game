@@ -3,6 +3,8 @@ require './Game.rb'
 require './Player.rb'
 require './Prompt.rb'
 
+index = 0
+
 game = Game.new
 
 def next_turn
@@ -12,10 +14,6 @@ def next_turn
   end
 end
 
-def check
-
-end
-
 player1 = Player.new('Player 1')
 game.players.push(player1)
 player2 = Player.new('Player 2')
@@ -23,30 +21,31 @@ game.players.push(player2)
 
 pp game.players
 
-index = 0
-pp game.game_over
-
-player1.lives = 0
-
-game.check
-pp game.game_over
-
+ 
 while !game.game_over do
   current_player = game.players[index]
   prompt = Prompt.new(current_player.name)
 
-  prompt.question
+  is_correct_answer = prompt.question
 
-  player_answer = gets.chomp
-  if player_answer == prompt.correct_answer
-    prompt.correct
+  if is_correct_answer
+    puts "That's correct!"
   else
-    prompt.wrong
+    puts "You are wrong."
     current_player.lives -= 1
   end
 
-  # game.check
+  pp current_player.lives
+
+  player1.lives = 0
+
+  game.check
   next_turn
 end
+  
+
+
+
+
 
 

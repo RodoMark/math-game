@@ -13,6 +13,9 @@ class Game
       end
     end
   end
+
+  
+
   
 
   # def new_game

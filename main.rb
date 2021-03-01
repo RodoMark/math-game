@@ -4,14 +4,6 @@ require './Player.rb'
 require './Prompt.rb'
 
 game = Game.new
-
-
-
-
-
-pp game.players
-
- 
 game.start
  
 puts "-----GAME OVER!-----" 

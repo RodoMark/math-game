@@ -17,7 +17,6 @@
 
 # Player:
 * name
-* answer
 * lives
 
 

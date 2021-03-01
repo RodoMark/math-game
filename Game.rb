@@ -20,6 +20,7 @@ class Game
       else
         @index += 1
       end
+      "----- NEW TURN -----"
     end
 
   end

@@ -28,12 +28,14 @@ while game.game_over == false do
     current_player.lives -= 1
   end
 
-  pp "#{current_player.name} lives => #{current_player.lives}"
+  pp "P1: #{player1.lives}/3 vs P2: #{player2.lives}/3"
 
   game.check
   game.next_turn
 end
-  
+ 
+puts "-----GAME OVER!-----" 
+puts "#{current_player.name} wins."
 
 
 
